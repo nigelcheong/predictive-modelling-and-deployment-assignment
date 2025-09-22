@@ -1,22 +1,22 @@
 stages:
   preprocess:
-    cmd: python preprocessing.py
+    cmd: python scripts/preprocessing.py
     deps:
     - data/zomato_df_final_data.csv
-    - preprocessing.py
+    - scripts/preprocessing.py
     outs:
     - data/preprocessed.csv
   feature_engineering:
-    cmd: python feature_engineering.py
+    cmd: python scripts/feature_engineering.py
     deps:
     - data/preprocessed.csv
-    - feature_engineering.py
+    - scripts/feature_engineering.py
     outs:
     - data/engineered.csv
   train_models:
-    cmd: python train.py
+    cmd: python scripts/train.py
     deps:
     - data/engineered.csv
-    - train.py
+    - scripts/train.py
     outs:
     - models/
