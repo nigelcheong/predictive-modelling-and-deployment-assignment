@@ -25,6 +25,7 @@ df_clean.loc[df_clean['lng'].isna(), 'lng'] = (
     df_clean.groupby('subzone')['lng'].transform('median')
 )
 
+# Create subzone_clean safely with .loc
 df_clean.loc[:, 'subzone_clean'] = (
     df_clean['subzone'].str.split(',').str[-1].str.strip()
 )
@@ -40,5 +41,5 @@ df_clean.loc[df_clean['lng'].isna(), 'lng'] = (
 )
 
 # Save preprocessed dataset
-df.to_csv("data/preprocessed.csv", index=False)
+df_clean.to_csv("data/preprocessed.csv", index=False)
 print("Preprocessing complete → data/preprocessed.csv")

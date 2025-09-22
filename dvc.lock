@@ -1,0 +1,51 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python preprocessing.py
+    deps:
+    - path: data/zomato_df_final_data.csv
+      hash: md5
+      md5: 6bb696eac5889d15f134cee5ff09eb5d
+      size: 2690897
+    - path: preprocessing.py
+      hash: md5
+      md5: 4f932a4c167f4cd16ad68f0ec657902d
+      size: 1336
+    outs:
+    - path: data/preprocessed.csv
+      hash: md5
+      md5: 449e9134e167bb294d6e61165699637d
+      size: 1968752
+  feature_engineering:
+    cmd: python feature_engineering.py
+    deps:
+    - path: data/preprocessed.csv
+      hash: md5
+      md5: 449e9134e167bb294d6e61165699637d
+      size: 1968752
+    - path: feature_engineering.py
+      hash: md5
+      md5: 15308828ec59483cbec33f26590bc239
+      size: 878
+    outs:
+    - path: data/engineered.csv
+      hash: md5
+      md5: c451d2216f4eaf3c4cf2dd65b446f74a
+      size: 2011899
+  train_models:
+    cmd: python train.py
+    deps:
+    - path: data/engineered.csv
+      hash: md5
+      md5: c451d2216f4eaf3c4cf2dd65b446f74a
+      size: 2011899
+    - path: train.py
+      hash: md5
+      md5: 96fa2a14d9b775160dde2604fe54f6a8
+      size: 4691
+    outs:
+    - path: models/
+      hash: md5
+      md5: d9a003408165e72b7a04a8fb619ec003.dir
+      size: 131182
+      nfiles: 2
