@@ -59,13 +59,17 @@ The pipeline is defined in `dvc.yaml` and consists of three stages:
 ```bash
 git clone <your-repo-url>
 cd <your-repo>
-
+```
 ### 2. Install Dependencies
+```bash
 pip install -r requirements.txt
-
+```
 ### 3. Pull Data and Models
+```bash
 git lfs pull
 dvc pull
-
+```
 ### 4. Reproduce the Pipeline
+```bash
 dvc repro
+```
