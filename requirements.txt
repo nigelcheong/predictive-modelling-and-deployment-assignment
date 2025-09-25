@@ -1,0 +1,22 @@
+# Core data science stack
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.5.1
+scipy==1.13.1
+
+# Visualisation
+matplotlib==3.9.2
+seaborn==0.13.2
+plotly==5.24.0
+
+# Experiment tracking / reproducibility
+dvc==3.51.2
+gitpython==3.1.43
+
+# PySpark (comment out if not needed in your environment)
+pyspark==3.5.1
+
+# Jupyter environment (if running notebooks)
+jupyter==1.0.0
+notebook==7.2.2
+ipykernel==6.29.5
