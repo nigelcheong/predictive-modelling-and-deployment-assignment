@@ -15,17 +15,20 @@ The workflow is fully reproducible using `dvc repro`, ensuring consistency acros
 ## 📂 Repository Structure  
 
 .<br>
+├── .dvc/ # Local remote storage<br>
 ├── data/ # Raw and intermediate datasets (Git LFS tracked)<br>
 ├── models/ # Trained models (DVC tracked, not stored in Git)<br>
 ├── notebooks/ # Exploratory analysis & PySpark experiments<br>
-├── preprocess.py # Preprocessing script<br>
-├── feature_engineer.py # Feature engineering script<br>
-├── train.py # Training script (regression + classification)<br>
-├── dvc.yaml # DVC pipeline definition<br>
-├── dvc.lock # Pipeline lock file (snapshots of dependencies/outputs)<br>
-├── .gitignore # Ignores DVC outputs in Git<br>
+├── scripts/ # Pipeline scripts<br>
+├── visualisations/ # Graphs and other visualisations<br>
 ├── .dvcignore # Ignores temp/unwanted files in DVC<br>
-└── README.md # Project documentation<br>
+├── .gitattributes # Git LFS tracking<br>
+├── .gitignore # Ignores DVC outputs in Git<br>
+├── README.md # Project documentation<br>
+├── dvc.lock # Pipeline lock file (snapshots of dependencies/outputs)<br>
+├── dvc.yaml # DVC pipeline definition<br>
+├── models.dvc # Track models with DVC<br>
+└── requirements.txt # List of dependencies<br>
 
 ---
 
