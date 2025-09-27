@@ -57,8 +57,8 @@ The pipeline is defined in `dvc.yaml` and consists of three stages:
 
 ### 1. Clone the Repository  
 ```bash
-git clone <your-repo-url>
-cd <your-repo>
+git clone https://github.com/nigelcheong/predictive-modelling-and-deployment-assignment
+cd predictive-modelling-and-deployment-assignment
 ```
 ### 2. Install Dependencies
 ```bash
